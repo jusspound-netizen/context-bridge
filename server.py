@@ -77,5 +77,30 @@ async def get_github_actions_runs(owner: str, repo: str, limit: int = 5) -> str:
 
     return await asyncio.to_thread(_fetch)
 
+@mcp.tool(description="Retrieves recent unresolved issues from a Sentry project.")
+async def get_sentry_issues(project_slug: str, limit: int = 5) -> str:
+    """Returns recent unresolved issues for a Sentry project."""
+    import asyncio, json as _j, os as _os
+    from urllib.request import Request, urlopen
+    from urllib.error import HTTPError, URLError
+    org = _os.environ.get("SENTRY_ORG_SLUG")
+    token = _os.environ.get("SENTRY_AUTH_TOKEN")
+    if not all([org, token]):
+        return _j.dumps({"error": "SENTRY_ORG_SLUG and SENTRY_AUTH_TOKEN must be set."})
+    url = f"https://sentry.io/api/0/projects/{org}/{project_slug}/issues/?query=is:unresolved&limit={limit}"
+    def _fetch():
+        req = Request(url, headers={"Authorization": f"Bearer {token}", "Accept": "application/json"})
+        try:
+            with urlopen(req, timeout=15) as resp:
+                data = _j.loads(resp.read().decode())
+                return _j.dumps([{"title": i.get("title"), "id": i.get("id"), "status": i.get("status"), "count": i.get("count")} for i in data], indent=2)
+        except HTTPError as e:
+            return _j.dumps({"error": f"Sentry HTTP {e.code}", "details": str(e.read().decode("utf-8"))[:200]})
+        except URLError as e:
+            return _j.dumps({"error": f"Sentry URL error: {e.reason}"})
+        except Exception as e:
+            return _j.dumps({"error": f"Sentry error: {type(e).__name__}: {str(e)}"})
+    return await asyncio.to_thread(_fetch)
+
 if __name__ == "__main__":
     mcp.run()
