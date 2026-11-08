@@ -29,29 +29,5 @@ def get_jira_ticket(ticket_id: str) -> str:
         return json.dumps({"error": str(e)})
 
 # ===== SENTRY CONNECTOR =====
-@mcp.tool(description="Retrieves recent unresolved issues from a Sentry project.")
-def get_sentry_issues(project_slug: str, limit: int = 5) -> str:
-    """Returns recent unresolved issues for a Sentry project."""
-    org = os.environ.get("SENTRY_ORG_SLUG")
-    token = os.environ.get("SENTRY_AUTH_TOKEN")
-    if not all([org, token]):
-        return json.dumps({"error": "SENTRY_ORG_SLUG and SENTRY_AUTH_TOKEN must be set."})
-    url = f"https://sentry.io/api/0/projects/{org}/{project_slug}/issues/?query=is:unresolved&limit={limit}"
-    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read().decode())
-            simplified = [
-                {"title": i.get("title"), "id": i.get("id"), "status": i.get("status"), "count": i.get("count")}
-                for i in data
-            ]
-            return json.dumps(simplified, indent=2)
-    except urllib.error.HTTPError as e:
-        return json.dumps({"error": f"Sentry API {e.code}", "details": str(e.read().decode("utf-8"))[:200]})
-    except urllib.error.URLError as e:
-        return json.dumps({"error": f"Sentry URL Error: {e.reason}"})
-    except Exception as e:
-        return json.dumps({"error": f"Unexpected {type(e).__name__}: {str(e)}"})
-
 if __name__ == "__main__":
     mcp.run()

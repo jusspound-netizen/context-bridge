@@ -24,8 +24,8 @@ A sample response from `get_jira_ticket`:
 **Tools:**
 | Tool Name | Description | Status |
 | :--- | :--- | :--- |
-| `get_jira_ticket` | Retrieves mock Jira ticket data by ID. | ✅ Implemented |
-| `get_sentry_issues` | Retrieves Sentry alerts. | ✅ Implemented |
+| `get_jira_ticket` | Retrieves mock Jira ticket data by ID. | ⏳ Planned |
+| `get_sentry_alert` | Retrieves Sentry alerts. | ✅ Implemented |
 | `get_github_actions_status` | Checks CI/CD status for a repo. | ⏳ Planned |
 | `send_slack_notification` | Sends status updates to Slack. | ⏳ Planned |
 
