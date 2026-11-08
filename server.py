@@ -1,11 +1,11 @@
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 import json
 import os
 import urllib.request
 import urllib.parse
 
 # Initialize FastMCP
-mcp = FastMCP()
+mcp = MCPServer("context-bridge")
 
 # Environment variables expected: JIRA_BASE_URL, JIRA_EMAIL, JIRA_API_TOKEN
 
@@ -47,6 +47,6 @@ def get_jira_ticket(ticket_id: str) -> str:
 
 # Run the MCP server (this will block execution)
 if __name__ == "__main__":
-    print("Starting FastMCP server...")
+    print("Starting MCP server...")
     # In a real scenario, you might configure host/port. For this task, we just run it.
     mcp.run()
