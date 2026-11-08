@@ -14,7 +14,7 @@
 
 ## Quick Start
 To run the server:
-1. `python context_bridge_server.py`
+1. `python server.py`
 2. Ensure required environment variables are set.
 
 ## Example
