@@ -12,6 +12,15 @@
 2. Set required environment variables (e.g., API keys for Jira/Sentry).
 3. Add the running MCP server endpoint to your AI environment (e.g., Claude Code or Cursor) as a custom MCP server.
 
+## Quick Start
+To run the server:
+1. `python context_bridge_server.py`
+2. Ensure required environment variables are set.
+
+## Example
+A sample response from `get_jira_ticket`:
+{"id": "PROJ-123", "summary": "Fix login bug", "status": "In Progress"}
+
 **Tools:**
 | Tool Name | Description | Status |
 | :--- | :--- | :--- |
@@ -21,4 +30,3 @@
 | `send_slack_notification` | Sends status updates to Slack. | ⏳ Planned |
 
 **License:** MIT
-
