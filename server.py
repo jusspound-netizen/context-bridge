@@ -48,8 +48,10 @@ def get_sentry_issues(project_slug: str, limit: int = 5) -> str:
             return json.dumps(simplified, indent=2)
     except urllib.error.HTTPError as e:
         return json.dumps({"error": f"Sentry API {e.code}", "details": str(e.read().decode("utf-8"))[:200]})
+    except urllib.error.URLError as e:
+        return json.dumps({"error": f"Sentry URL Error: {e.reason}"})
     except Exception as e:
-        return json.dumps({"error": str(e)})
+        return json.dumps({"error": f"Unexpected {type(e).__name__}: {str(e)}"})
 
 if __name__ == "__main__":
     mcp.run()
