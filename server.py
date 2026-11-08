@@ -47,6 +47,4 @@ def get_jira_ticket(ticket_id: str) -> str:
 
 # Run the MCP server (this will block execution)
 if __name__ == "__main__":
-    print("Starting MCP server...")
-    # In a real scenario, you might configure host/port. For this task, we just run it.
     mcp.run()
