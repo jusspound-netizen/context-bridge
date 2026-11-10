@@ -36,7 +36,7 @@ A sample response from `get_jira_ticket`:
 
 ## Related projects
 
-- [ghost-tracer](https://github.com/jusspound-netizen/ghost-trace) � local-first observability for AI agents
-- [ghost-reason](https://github.com/jusspound-netizen/ghost-reason) � trace your agent's reasoning
-- [agent-cost-auditor](https://github.com/jusspound-netizen/agent-cost-auditor) � audit an agent's log for wasted tokens
-- [Agensi storefront](https://agensi.io/creators/context-bridge) � ready-to-use AI skills for Jira, Sentry, and DevOps
+- [ghost-tracer](https://github.com/jusspound-netizen/ghost-trace) - local-first observability for AI agents
+- [ghost-reason](https://github.com/jusspound-netizen/ghost-reason) - trace your agent's reasoning
+- [agent-cost-auditor](https://github.com/jusspound-netizen/agent-cost-auditor) - audit an agent's log for wasted tokens
+- [Agensi storefront](https://agensi.io/creators/context-bridge) - ready-to-use AI skills for Jira, Sentry, and DevOps
