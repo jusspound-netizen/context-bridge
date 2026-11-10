@@ -1,0 +1,11 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+demo.mp4
+mcp-publisher.exe
+*.db
+AGENT_CONTEXT.md
