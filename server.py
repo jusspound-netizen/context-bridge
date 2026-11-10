@@ -104,3 +104,10 @@ async def get_sentry_issues(project_slug: str, limit: int = 5) -> str:
 
 if __name__ == "__main__":
     mcp.run()
+
+
+def main():
+    mcp.run()
+
+if __name__ == "__main__":
+    main()

@@ -1,3 +1,5 @@
+<!-- mcp-name: io.github.jusspound-netizen/context-bridge -->
+
 # Context Bridge
 
 **Context Bridge - one MCP endpoint for all your dev tools**
