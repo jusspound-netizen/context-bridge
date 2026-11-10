@@ -2,6 +2,8 @@
 
 # Context Bridge
 
+[![Glama MCP Server](https://glama.ai/mcp/servers/jusspound-netizen/context-bridge/badge)](https://glama.ai/mcp/servers/jusspound-netizen/context-bridge)
+
 **Context Bridge - one MCP endpoint for all your dev tools**
 
 **Problem:**
@@ -26,8 +28,8 @@ A sample response from `get_jira_ticket`:
 **Tools:**
 | Tool Name | Description | Status |
 | :--- | :--- | :--- |
-| `get_jira_ticket` | Retrieves mock Jira ticket data by ID. | ✅ Implemented |
-| `get_sentry_issues` | Retrieves Sentry alerts. | ✅ Implemented |
+| `get_jira_ticket` | Fetches a Jira ticket by issue key via the Jira REST API. | ✅ Implemented |
+| `get_sentry_issues` | Lists unresolved Sentry issues by project slug. | ✅ Implemented |
 | `get_github_actions_runs` | Checks CI/CD status for a repo. | ✅ Implemented |
 | `send_slack_notification` | Sends status updates to Slack. | ✅ Implemented |
 
