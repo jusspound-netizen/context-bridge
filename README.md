@@ -28,15 +28,15 @@ A sample response from `get_jira_ticket`:
 **Tools:**
 | Tool Name | Description | Status |
 | :--- | :--- | :--- |
-| `get_jira_ticket` | Fetches a Jira ticket by issue key via the Jira REST API. | âœ… Implemented |
-| `get_sentry_issues` | Lists unresolved Sentry issues by project slug. | âœ… Implemented |
-| `get_github_actions_runs` | Checks CI/CD status for a repo. | âœ… Implemented |
+| `get_jira_ticket` | Fetches a Jira ticket by issue key via the Jira REST API. | Yes Implemented |
+| `get_sentry_issues` | Lists unresolved Sentry issues by project slug. | Yes Implemented |
+| `get_github_actions_runs` | Checks CI/CD status for a repo. | Yes Implemented |
 
 **License:** MIT
 
 ## Related projects
 
-- [ghost-tracer](https://github.com/jusspound-netizen/ghost-trace) — local-first observability for AI agents
-- [ghost-reason](https://github.com/jusspound-netizen/ghost-reason) — trace your agent's reasoning
-- [agent-cost-auditor](https://github.com/jusspound-netizen/agent-cost-auditor) — audit an agent's log for wasted tokens
-- [Agensi storefront](https://agensi.io/creators/context-bridge) — ready-to-use AI skills for Jira, Sentry, and DevOps
+- [ghost-tracer](https://github.com/jusspound-netizen/ghost-trace) ï¿½ local-first observability for AI agents
+- [ghost-reason](https://github.com/jusspound-netizen/ghost-reason) ï¿½ trace your agent's reasoning
+- [agent-cost-auditor](https://github.com/jusspound-netizen/agent-cost-auditor) ï¿½ audit an agent's log for wasted tokens
+- [Agensi storefront](https://agensi.io/creators/context-bridge) ï¿½ ready-to-use AI skills for Jira, Sentry, and DevOps
