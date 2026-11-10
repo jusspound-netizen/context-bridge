@@ -31,6 +31,5 @@ A sample response from `get_jira_ticket`:
 | `get_jira_ticket` | Fetches a Jira ticket by issue key via the Jira REST API. | ✅ Implemented |
 | `get_sentry_issues` | Lists unresolved Sentry issues by project slug. | ✅ Implemented |
 | `get_github_actions_runs` | Checks CI/CD status for a repo. | ✅ Implemented |
-| `send_slack_notification` | Sends status updates to Slack. | ✅ Implemented |
 
 **License:** MIT
