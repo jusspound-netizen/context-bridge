@@ -8,7 +8,15 @@ import base64
 mcp = MCPServer("context-bridge")
 
 # ===== JIRA CONNECTOR =====
-@mcp.tool(description="Retrieves a Jira ticket by its issue key (e.g. 'PROJ-123'). Returns JSON with id, summary, status, assignee, and description fields. Requires JIRA_BASE_URL, JIRA_EMAIL, and JIRA_API_TOKEN environment variables.")
+@mcp.tool(
+    description="Retrieves a Jira ticket by its issue key (e.g. 'PROJ-123'). Returns JSON with id, summary, status, assignee, and description fields. Requires JIRA_BASE_URL, JIRA_EMAIL, and JIRA_API_TOKEN environment variables.",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True
+    }
+)
 async def get_jira_ticket(ticket_id: str) -> str:
     """Returns real JSON data for a given ticket ID from Jira."""
     import asyncio
@@ -39,7 +47,15 @@ async def get_jira_ticket(ticket_id: str) -> str:
 
     return await asyncio.to_thread(_fetch)
 # ===== SENTRY CONNECTOR =====
-@mcp.tool(description="Lists recent GitHub Actions workflow runs for a repository (owner/repo). Returns JSON array with run id, name, status, conclusion, head_branch, and html_url. Optional limit (default 5). Requires GITHUB_PERSONAL_ACCESS_TOKEN with actions:read scope.")
+@mcp.tool(
+    description="Lists recent GitHub Actions workflow runs for a repository (owner/repo). Returns JSON array with run id, name, status, conclusion, head_branch, and html_url. Optional limit (default 5). Requires GITHUB_PERSONAL_ACCESS_TOKEN with actions:read scope.",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": False,
+        "openWorldHint": True
+    }
+)
 async def get_github_actions_runs(owner: str, repo: str, limit: int = 5) -> str:
     """Returns recent CI runs for a repo."""
     import asyncio, json as _j, os as _os
@@ -77,7 +93,15 @@ async def get_github_actions_runs(owner: str, repo: str, limit: int = 5) -> str:
 
     return await asyncio.to_thread(_fetch)
 
-@mcp.tool(description="Lists recent unresolved issues from a Sentry project by project slug. Returns JSON array with issue id, title, culprit, count, and first_seen. Optional limit (default 5). Requires SENTRY_ORG_SLUG and SENTRY_AUTH_TOKEN environment variables.")
+@mcp.tool(
+    description="Lists recent unresolved issues from a Sentry project by project slug. Returns JSON array with issue id, title, culprit, count, and first_seen. Optional limit (default 5). Requires SENTRY_ORG_SLUG and SENTRY_AUTH_TOKEN environment variables.",
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": False,
+        "openWorldHint": True
+    }
+)
 async def get_sentry_issues(project_slug: str, limit: int = 5) -> str:
     """Returns recent unresolved issues for a Sentry project."""
     import asyncio, json as _j, os as _os
