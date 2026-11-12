@@ -11,3 +11,4 @@ demo.mp4
 *.bak
 AGENT_CONTEXT.md
 server.json
+*.bak-*
