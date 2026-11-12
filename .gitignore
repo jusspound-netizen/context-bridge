@@ -7,3 +7,7 @@ mcp-publisher.exe
 *.db
 demo.mp4
 demo.mp4
+
+*.bak
+AGENT_CONTEXT.md
+server.json
