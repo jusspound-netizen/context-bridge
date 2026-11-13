@@ -44,6 +44,6 @@ A sample response from `get_jira_ticket`:
 - [Agensi storefront](https://agensi.io/creators/context-bridge) - ready-to-use AI skills for Jira, Sentry, and DevOps
 ---
 
-### 🛠️ Ready-to-use Agent Skills
+### Ready-to-use Agent Skills
 Want your AI agent to use these tools automatically? Get the **Dev Context Connector** skill on Agensi. It includes the exact setup instructions and configuration templates for Claude Code, Cursor, and other MCP clients.
-👉 **[Get Dev Context Connector on Agensi](https://www.agensi.io/r/CONTEXTBRIDGE?to=/skills/dev-context-connector)**
+> **[Get Dev Context Connector on Agensi](https://www.agensi.io/r/CONTEXTBRIDGE?to=/skills/dev-context-connector)**
