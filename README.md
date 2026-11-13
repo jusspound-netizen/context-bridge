@@ -4,6 +4,7 @@
 
 [![Glama MCP Server](https://glama.ai/mcp/servers/jusspound-netizen/context-bridge/badge)](https://glama.ai/mcp/servers/jusspound-netizen/context-bridge)
 [![M8ven Score](https://m8ven.ai/badge/mcp/jusspound-netizen/context-bridge)](https://m8ven.ai/mcp/jusspound-netizen/context-bridge?s=readme)
+[![Context Bridge MCP server](https://mcprush.com/badge/jusspound-netizen-context-bridge-mcp/card.svg)](https://mcprush.com/to/jusspound-netizen-context-bridge-mcp?ref=badge)
 
 **Context Bridge - one MCP endpoint for all your dev tools**
 
