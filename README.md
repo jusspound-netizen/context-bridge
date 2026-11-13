@@ -42,3 +42,8 @@ A sample response from `get_jira_ticket`:
 - [ghost-reason](https://github.com/jusspound-netizen/ghost-reason) - trace your agent's reasoning
 - [agent-cost-auditor](https://github.com/jusspound-netizen/agent-cost-auditor) - audit an agent's log for wasted tokens
 - [Agensi storefront](https://agensi.io/creators/context-bridge) - ready-to-use AI skills for Jira, Sentry, and DevOps
+---
+
+### 🛠️ Ready-to-use Agent Skills
+Want your AI agent to use these tools automatically? Get the **Dev Context Connector** skill on Agensi. It includes the exact setup instructions and configuration templates for Claude Code, Cursor, and other MCP clients.
+👉 **[Get Dev Context Connector on Agensi](https://www.agensi.io/r/CONTEXTBRIDGE?to=/skills/dev-context-connector)**
